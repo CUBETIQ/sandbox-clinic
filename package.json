@@ -4,21 +4,9 @@
   "description": "Clinic Application",
   "main": "main.js",
   "build": {
-    "appId": "cubetiq-clinic",
-    "category": "com.cubetiqs.pro.clinic",
-    "dmg": {
-      "contents": [
-        {
-          "x": 110,
-          "y": 150
-        },
-        {
-          "x": 240,
-          "y": 150,
-          "type": "link",
-          "path": "/Applications"
-        }
-      ]
+    "appId": "com.cubetiqs.clinic",
+    "mac": {
+      "category": "com.cubetiqs.pro.clinic"
     },
     "linux": {
       "target": [
@@ -27,7 +15,7 @@
       ]
     },
     "win": {
-      "target": "squirrel",
+      "target": "nsis",
       "icon": "build/icon.ico"
     }
   },
@@ -37,7 +25,10 @@
     "electron-builder": "^22.3.2"
   },
   "scripts": {
-    "start": "electron main.js",
+    "postinstall": "electron-builder install-app-deps",
+    "start": "npm install && electron ./main",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
