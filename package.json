@@ -1,0 +1,26 @@
+{
+  "name": "clinic",
+  "version": "1.0.0",
+  "description": "Clinic Application",
+  "main": "main.js",
+  "dependencies": {
+    "electron": "^8.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CUBETIQ/sandbox-clinic.git"
+  },
+  "keywords": [
+    "clinic"
+  ],
+  "author": "Sambo Chea",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CUBETIQ/sandbox-clinic/issues"
+  },
+  "homepage": "https://github.com/CUBETIQ/sandbox-clinic#readme"
+}
