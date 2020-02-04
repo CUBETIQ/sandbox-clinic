@@ -7,6 +7,6 @@ npm start
 
 #### Run Product Application
 ```sh
-
+npm run dist
 ```
 
