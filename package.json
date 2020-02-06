@@ -38,7 +38,10 @@
   "keywords": [
     "clinic"
   ],
-  "author": "Sambo Chea",
+  "author": {
+    "name": "Sambo Chea",
+    "email": "sombochea@cubetiqs.com"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/CUBETIQ/sandbox-clinic/issues"
