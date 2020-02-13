@@ -17,7 +17,7 @@ app.on("ready", () => {
   
   mainApp.setFullScreen(true)
   mainApp.setTitle("DR PROFESSIONAL CLINIC");
-  mainApp.loadURL("http://clinic.cubetiq.online?platform=desktop");
+  mainApp.loadURL(process.env.DR_URL);
 
   mainApp.on("closed", () => {
     mainApp = null;
