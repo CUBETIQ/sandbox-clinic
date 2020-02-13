@@ -1,10 +1,11 @@
 const electron = require("electron");
 const { app, BrowserWindow } = electron;
 
+const DR_URL = process.env.DR_URL || "http://sandbox.clinic.cubetiq.online?platform=desktop&offline=true&source=" + (process.env.USERNAME || "unknown");
+const DR_TITLE = "DR PROFESSIONAL CLINIC"
+
 let mainApp;
-
 app.allowRendererProcessReuse = true;
-
 app.on("ready", () => {
 
   mainApp = new BrowserWindow({
@@ -16,8 +17,10 @@ app.on("ready", () => {
   mainApp.webContents.executeJavaScript(`localStorage.setItem("IS_ELECTRON", true)`)
   
   mainApp.setFullScreen(true)
-  mainApp.setTitle("DR PROFESSIONAL CLINIC");
-  mainApp.loadURL(process.env.DR_URL);
+  mainApp.setTitle(DR_TITLE);
+
+  console.log("Starting from:", DR_URL)
+  mainApp.loadURL(DR_URL);
 
   mainApp.on("closed", () => {
     mainApp = null;
