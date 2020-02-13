@@ -4,6 +4,7 @@
   "description": "Clinic Application",
   "main": "main.js",
   "devDependencies": {
+    "cross-env": "^7.0.0",
     "electron": "^8.0.0",
     "electron-builder": "^22.3.2"
   },
@@ -11,8 +12,8 @@
     "postinstall": "electron-builder install-app-deps",
     "start": "yarn && electron ./main",
     "pack": "electron-builder --dir",
-    "dist": "DR_URL=http://clinic.cubetiq.online?platform=desktop electron-builder --config ./config/electron-builder-dev.json",
-    "sandbox": "DR_URL=http://sandbox.clinic.cubetiq.online?platform=desktop electron-builder --config ./config/electron-builder-sandbox.json",
+    "dist": "cross-env DR_URL=http://clinic.cubetiq.online?platform=desktop electron-builder --config ./config/electron-builder-dev.json",
+    "sandbox": "cross-env DR_URL=http://sandbox.clinic.cubetiq.online?platform=desktop electron-builder --config ./config/electron-builder-sandbox.json",
     "builder-help": "electron-builder --help",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
