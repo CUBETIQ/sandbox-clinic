@@ -6,7 +6,7 @@
   "build": {
     "appId": "com.cubetiqs.clinic",
     "mac": {
-      "category": "com.cubetiqs.pro.clinic",
+      "category": "com.cubetiqs.pro.clinic"
     },
     "linux": {
       "category": "com.cubetiqs.pro.clinic",
