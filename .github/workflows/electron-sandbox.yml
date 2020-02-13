@@ -33,7 +33,7 @@ jobs:
           if: matrix.os != 'windows-latest'
           run: |
                 mkdir artifacts
-                mv dist/sandbox/{*.deb,*.dmg,*.AppImage} artifacts
+                cp -R dist/sandbox/* artifacts
         - name: Cleanup artifacts Windowns
           if: matrix.os == 'windows-latest'
           run: |
