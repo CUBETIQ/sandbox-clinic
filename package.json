@@ -6,23 +6,21 @@
   "build": {
     "appId": "com.cubetiqs.clinic",
     "mac": {
-      "category": "com.cubetiqs.pro.clinic"
+      "category": "com.cubetiqs.pro.clinic",
+      "icon": "build/icon.png"
     },
     "linux": {
+      "category": "com.cubetiqs.pro.clinic",
       "target": [
         "AppImage",
         "deb"
-      ]
+      ],
+      "icon": "build/icon.png"
     },
     "win": {
       "target": "nsis",
-      "icon": "build/icon.ico"
+      "icon": "build/icon.png"
     }
-  },
-  "dependencies": {
-    "electron-browser-storage": "^1.0.6",
-    "electron-localstorage": "^1.0.5",
-    "electron-store": "^5.1.0"
   },
   "devDependencies": {
     "electron": "^8.0.0",

@@ -1,5 +1,5 @@
 const electron = require("electron");
-const { app, BrowserWindow, session } = electron;
+const { app, BrowserWindow } = electron;
 
 let mainApp;
 
@@ -17,7 +17,7 @@ app.on("ready", () => {
   
   mainApp.setFullScreen(true)
   mainApp.setTitle("DR PROFESSIONAL CLINIC");
-  mainApp.loadURL("http://clinic.cubetiq.online");
+  mainApp.loadURL("http://clinic.cubetiq.online?platform=desktop");
 
   mainApp.on("closed", () => {
     mainApp = null;
