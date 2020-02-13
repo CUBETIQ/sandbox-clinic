@@ -14,8 +14,8 @@ jobs:
         - name: Context
           env:
             GITHUB_CONTEXT: ${{ toJson(github) }}
-            run: echo "$GITHUB_CONTEXT"
-          uses: actions/checkout@v1
+          run: echo "$GITHUB_CONTEXT"
+        - uses: actions/checkout@v1
           with:
             fetch-depth: 1
         - name: Use Node.js 10.x
@@ -49,4 +49,4 @@ jobs:
           with:
             files: "artifacts/**"
             env:
-            GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+              GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
