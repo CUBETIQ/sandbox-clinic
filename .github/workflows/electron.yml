@@ -1,4 +1,4 @@
-name: Sandbox Clinic Electron CD
+name: Sandbox Clinic Desktop
 
 on: [push]
 
@@ -32,7 +32,7 @@ jobs:
           if: matrix.os != 'windows-latest'
           run: |
                 mkdir artifacts
-                mv "dist/(*.exe,*.deb,*.AppImage,*.dmg)" artifacts || true
+                mv "dist/(*.exe,*.deb,*.AppImage,*.dmg)" artifacts
         - name: Cleanup artifacts Win
           if: matrix.os == 'windows-latest'
           run: |
