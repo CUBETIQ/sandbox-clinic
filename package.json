@@ -28,7 +28,7 @@
   },
   "scripts": {
     "postinstall": "electron-builder install-app-deps",
-    "start": "npm install && electron ./main",
+    "start": "yarn && electron ./main",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
     "test": "echo \"Error: no test specified\" && exit 1"
