@@ -33,12 +33,12 @@ jobs:
           if: matrix.os != 'windows-latest'
           run: |
                 mkdir artifacts
-                mv -r dist/*.deb artifacts || true
+                mv -r dist/sandbox/*.deb artifacts || true
         - name: Cleanup artifacts Windowns
           if: matrix.os == 'windows-latest'
           run: |
                 mkdir artifacts
-                mv -r dist/*.exe artifacts
+                mv -r dist/sandbox/*.exe artifacts
         - name: Upload artifacts
           uses: actions/upload-artifact@v1
           with:
