@@ -3,22 +3,6 @@
   "version": "1.0.0",
   "description": "Clinic Application",
   "main": "main.js",
-  "build": {
-    "appId": "com.cubetiqs.clinic",
-    "mac": {
-      "category": "com.cubetiqs.pro.clinic"
-    },
-    "linux": {
-      "category": "com.cubetiqs.pro.clinic",
-      "target": [
-        "AppImage",
-        "deb"
-      ]
-    },
-    "win": {
-      "target": "nsis"
-    }
-  },
   "devDependencies": {
     "electron": "^8.0.0",
     "electron-builder": "^22.3.2"
@@ -27,7 +11,9 @@
     "postinstall": "electron-builder install-app-deps",
     "start": "yarn && electron ./main",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder",
+    "dist": "electron-builder --config ./config/electron-builder-dev.json",
+    "sandbox": "electron-builder --config ./config/electron-builder-sandbox.json",
+    "builder-help": "electron-builder --help",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
