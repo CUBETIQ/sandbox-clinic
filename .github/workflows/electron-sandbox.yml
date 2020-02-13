@@ -33,7 +33,7 @@ jobs:
           if: matrix.os != 'windows-latest'
           run: |
                 mkdir artifacts
-                cp -R dist/{*.deb,*.dmg,*.AppImage} artifacts
+                cp -R dist/{*.deb,*.dmg,*.AppImage} artifacts || true
         - name: Cleanup artifacts Windowns
           if: matrix.os == 'windows-latest'
           run: |
