@@ -32,7 +32,7 @@ jobs:
         - name: Cleanup artifacts Windows, Linux and macOS
           run: |
                 mkdir artifacts
-                mv dist/dev/{*.deb,*.exe,*.dmg,*.AppImage} artifacts
+                mv -t dist/dev/{*.deb,*.exe,*.dmg,*.AppImage} artifacts
         - name: Upload artifacts
           uses: actions/upload-artifact@v1
           with:
