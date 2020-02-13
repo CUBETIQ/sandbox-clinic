@@ -1,0 +1,17 @@
+{
+  "productName": "Clinic-Sandbox",
+  "appId": "com.cubetiqs.clinic",
+  "mac": {
+    "category": "com.cubetiqs.pro.clinic"
+  },
+  "linux": {
+    "category": "com.cubetiqs.pro.clinic",
+    "target": ["AppImage", "deb"]
+  },
+  "win": {
+    "target": "nsis"
+  },
+  "directories": {
+    "output": "./dist/sandbox"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "clinic",
+  "version": "1.0.0",
+  "description": "Clinic Application",
+  "main": "main.js",
+  "build": {
+    "productName": "Clinic-Sandbox",
+    "appId": "com.cubetiqs.clinic",
+    "mac": {
+      "category": "com.cubetiqs.pro.clinic"
+    },
+    "linux": {
+      "category": "com.cubetiqs.pro.clinic",
+      "target": ["AppImage", "deb"]
+    },
+    "win": {
+      "target": "nsis"
+    }
+  },  
+  "devDependencies": {
+    "cross-env": "^7.0.0",
+    "electron": "^8.0.0",
+    "electron-builder": "^22.3.2"
+  },
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps",
+    "start": "yarn && cross-env DR_URL=http://clinic.cubetiq.online?platform=desktop electron ./main",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "builder-help": "electron-builder --help",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CUBETIQ/sandbox-clinic.git"
+  },
+  "keywords": [
+    "clinic"
+  ],
+  "author": {
+    "name": "Sambo Chea",
+    "email": "sombochea@cubetiqs.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CUBETIQ/sandbox-clinic/issues"
+  },
+  "homepage": "https://github.com/CUBETIQ/sandbox-clinic#readme"
+}
