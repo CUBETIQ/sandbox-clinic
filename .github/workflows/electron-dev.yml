@@ -1,4 +1,4 @@
-name: Sandbox Clinic Desktop for Dev
+name: Sandbox Clinic Desktop For Dev
 
 on: [push]
 
@@ -29,16 +29,10 @@ jobs:
         - name: Publish
           run: |
             yarn run dist 
-        - name: Cleanup artifacts Linux and macOS For Dev
-          if: matrix.os != 'windows-latest'
+        - name: Cleanup artifacts Windows, Linux and macOS
           run: |
                 mkdir artifacts
-                cp -R "dist/dev/(*.exe,*.deb,*.AppImage,*.dmg)" artifacts || true
-        - name: Cleanup artifacts Windowns for Dev
-          if: matrix.os == 'windows-latest'
-          run: |
-                mkdir artifacts
-                cp -R dist/dev/*.exe artifacts
+                mv dist/dev/{*.deb,*.exe,*.dmg,*.AppImage} artifacts
         - name: Upload artifacts
           uses: actions/upload-artifact@v1
           with:
