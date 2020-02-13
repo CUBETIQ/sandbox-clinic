@@ -1,0 +1,53 @@
+name: Sandbox Clinic Desktop for Dev
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    steps:
+        - name: Starting Context
+          env:
+            GITHUB_CONTEXT: ${{ toJson(github) }}
+          run: echo "$GITHUB_CONTEXT"
+        - name: Checkout Git Repository
+          uses: actions/checkout@v1
+          with:
+            fetch-depth: 1
+        - name: Use Node.js 10.x
+          uses: actions/setup-node@v1
+          with:
+            node-version: 10.x
+        - name: yarn install
+          run: |
+            yarn install
+        - name: Publish
+          run: |
+            yarn run dist 
+        - name: Cleanup artifacts Linux and macOS For Dev
+          if: matrix.os != 'windows-latest'
+          run: |
+                mkdir artifacts
+                mv "dist/(*.exe,*.deb,*.AppImage,*.dmg)" artifacts || true
+        - name: Cleanup artifacts Windowns for Dev
+          if: matrix.os == 'windows-latest'
+          run: |
+                mkdir artifacts
+                mv dist/*.exe artifacts
+        - name: Upload artifacts
+          uses: actions/upload-artifact@v1
+          with:
+            name: ${{matrix.os}}
+            path: artifacts
+        - name: Release
+          uses: softprops/action-gh-release@v1
+          if: startsWith(github.ref, 'refs/tags/v')
+          with:
+            files: "artifacts/**"
+          env:
+            GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
