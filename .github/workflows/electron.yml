@@ -32,22 +32,12 @@ jobs:
           if: matrix.os != 'windows-latest'
           run: |
                 mkdir artifacts
-                mv 'dist/(*.exe,*.deb,*.AppImage,*.dmg)' artifacts || true
+                mv "dist/(*.exe,*.deb,*.AppImage,*.dmg)" artifacts || true
         - name: Cleanup artifacts Win
           if: matrix.os == 'windows-latest'
           run: |
                 mkdir artifacts
                 mv dist/*.exe artifacts
-        - name: Cleanup artifacts Mac
-          if: matrix.os == 'macOS-latest'
-          run: |
-                mkdir artifacts
-                mv dist/*.dmg artifacts
-        - name: Cleanup artifacts Ubuntu
-          if: matrix.os == 'ubuntu-latest'
-          run: |
-                mkdir artifacts
-                mv dist/*.deb artifacts
         - name: Upload artifacts
           uses: actions/upload-artifact@v1
           with:
