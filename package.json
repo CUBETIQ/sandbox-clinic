@@ -7,7 +7,6 @@
     "appId": "com.cubetiqs.clinic",
     "mac": {
       "category": "com.cubetiqs.pro.clinic",
-      "icon": "build/icon.png"
     },
     "linux": {
       "category": "com.cubetiqs.pro.clinic",
