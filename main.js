@@ -1,24 +1,25 @@
 const electron = require("electron");
-const { app, BrowserWindow } = electron;
-const Store = require("electron-store");
+const { app, BrowserWindow, session } = electron;
 
-let mainWindow;
-const store = new Store();
+let mainApp;
 
-store.set('unicorn', '🦄');
-console.log(store.get('unicorn'));
+app.allowRendererProcessReuse = true;
 
 app.on("ready", () => {
-  mainWindow = new BrowserWindow({
+
+  mainApp = new BrowserWindow({
     width: 1000,
     height: 700
   });
 
-  mainWindow.setFullScreen(true)
-  mainWindow.setTitle("DR PROFESSIONAL CLINIC");
-  mainWindow.loadURL("http://clinic.cubetiq.online");
+  mainApp.webContents.executeJavaScript(`localStorage.setItem("author", "Sambo Chea <sombochea@cubetiqs.com>")`)
+  mainApp.webContents.executeJavaScript(`localStorage.setItem("IS_ELECTRON", true)`)
+  
+  mainApp.setFullScreen(true)
+  mainApp.setTitle("DR PROFESSIONAL CLINIC");
+  mainApp.loadURL("http://clinic.cubetiq.online");
 
-  mainWindow.on("closed", () => {
-    mainWindow = null;
+  mainApp.on("closed", () => {
+    mainApp = null;
   });
 });
