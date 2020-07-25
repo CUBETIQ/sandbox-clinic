@@ -1,8 +1,8 @@
 const electron = require("electron");
 const { app, BrowserWindow } = electron;
 
-const DR_URL = process.env.DR_URL || "http://sandbox.clinic.cubetiq.online?platform=desktop&offline=true&source=" + (process.env.USERNAME || "unknown");
-const DR_TITLE = "DR PROFESSIONAL CLINIC"
+const DR_URL = process.env.DR_URL || "https://clinic.cubetiqs.com?platform=desktop&offline=true&source=" + (process.env.USERNAME || "unknown");
+const DR_TITLE = "CUBETIQ CLINIC"
 
 let mainApp;
 app.allowRendererProcessReuse = true;
