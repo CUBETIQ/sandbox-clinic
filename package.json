@@ -26,7 +26,7 @@
     "postinstall": "electron-builder install-app-deps",
     "start": "yarn && cross-env DR_URL=https://clinic.cubetiqs.com?platform=desktop electron ./main",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder",
+    "dist": "electron-builder --publish never",
     "builder-help": "electron-builder --help",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
