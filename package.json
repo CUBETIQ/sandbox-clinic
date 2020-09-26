@@ -11,12 +11,15 @@
     },
     "linux": {
       "category": "com.cubetiqs.pro.clinic",
-      "target": ["AppImage", "deb"]
+      "target": [
+        "AppImage",
+        "deb"
+      ]
     },
     "win": {
       "target": "nsis"
     }
-  },  
+  },
   "devDependencies": {
     "cross-env": "^7.0.0",
     "electron": "^8.0.0",
@@ -27,6 +30,7 @@
     "start": "yarn && cross-env DR_URL=https://clinic.cubetiqs.com?platform=desktop electron ./main",
     "pack": "electron-builder --dir",
     "dist": "electron-builder --publish never",
+    "build-icon": "electron-icon-builder --input=icon.png --output=dist/icons",
     "builder-help": "electron-builder --help",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -45,5 +49,8 @@
   "bugs": {
     "url": "https://github.com/CUBETIQ/sandbox-clinic/issues"
   },
-  "homepage": "https://github.com/CUBETIQ/sandbox-clinic#readme"
+  "homepage": "https://github.com/CUBETIQ/sandbox-clinic#readme",
+  "dependencies": {
+    "electron-icon-builder": "^1.0.2"
+  }
 }
