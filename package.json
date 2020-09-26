@@ -24,7 +24,7 @@
   },
   "scripts": {
     "postinstall": "electron-builder install-app-deps",
-    "start": "yarn && cross-env DR_URL=http://clinic.cubetiq.online?platform=desktop electron ./main",
+    "start": "yarn && cross-env DR_URL=https://clinic.cubetiqs.com?platform=desktop electron ./main",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
     "builder-help": "electron-builder --help",
