@@ -1,7 +1,7 @@
 const electron = require("electron");
 const { app, BrowserWindow } = electron;
 
-const URL = "https://app.drprofessionalglobal.com";
+const URL = "https://clinic.cubetiqs.com";
 
 const DR_URL =
   process.env.DR_URL ||
