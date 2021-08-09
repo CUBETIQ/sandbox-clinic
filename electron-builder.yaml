@@ -33,10 +33,10 @@ linux:
     - target: AppImage
 
 win:
-  artifactName: ${name}-${version}-windows-${arch}.${ext}
+  artifactName: ${name}-${version}-windows-${arch}-${env.ARTIFACT_NAME_POSTFIX}.${ext}
   icon: ./assets/images/icon.ico
   target:
     - { target: nsis }
 
 nsis:
-  artifactName: ${name}-${version}-${arch}.${ext}
+  artifactName: ${name}-${version}-nsis-${arch}-${env.ARTIFACT_NAME_POSTFIX}.${ext}
