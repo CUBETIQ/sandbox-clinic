@@ -2,10 +2,10 @@
   "productName": "Clinic-Dev",
   "appId": "com.cubetiqs.clinic",
   "mac": {
-    "category": "com.cubetiqs.pro.clinic"
+    "category": "com.cubetiqs.clinic"
   },
   "linux": {
-    "category": "com.cubetiqs.pro.clinic",
+    "category": "com.cubetiqs.clinic",
     "target": ["AppImage", "deb"]
   },
   "win": {

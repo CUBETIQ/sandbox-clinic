@@ -1,4 +1,4 @@
-# CUBETIQ Clinic Application
+# CUBETIQ Clinic System Management
 
 ![Sandbox Clinic Desktop](https://github.com/CUBETIQ/sandbox-clinic/workflows/Sandbox%20Clinic%20Desktop/badge.svg)
 

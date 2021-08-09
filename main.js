@@ -1,10 +1,11 @@
 const electron = require("electron");
 const { app, BrowserWindow } = electron;
 const os = require("os");
+const APP_URL = require("./lib");
 
-const URL = process.env.APP_URL || "https://clinic.cubetiqs.com";
+const URL = APP_URL || "https://clinic.cubetiqs.com";
 const MAIN_URL = `${URL}?platform=desktop&offline=true&os=${os.platform()}&hostname=${os.hostname()}&arch=${os.arch()}&source=${process.env.USERNAME || "unknown"}`
-const APP_TITLE = "CUBETIQ CLINIC SYSTEM";
+const APP_TITLE = "Clinic System";
 
 let mainApp;
 app.allowRendererProcessReuse = true;
@@ -12,6 +13,8 @@ app.on("ready", () => {
   mainApp = new BrowserWindow({
     width: 1024,
     height: 768,
+    icon: "./assets/images/icon.png",
+    title: APP_TITLE,
   });
 
   mainApp.webContents.executeJavaScript(

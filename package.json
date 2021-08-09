@@ -3,8 +3,9 @@
   "version": "1.0.2",
   "description": "CUBETIQ Clinic System Management",
   "main": "main.js",
+  "icon": "./assets/images/icon.ico",
   "build": {
-    "productName": "Clinic-Sandbox",
+    "productName": "Sandbox-Clinic",
     "appId": "com.cubetiqs.clinic",
     "mac": {
       "category": "com.cubetiqs.clinic"
@@ -17,7 +18,8 @@
       ]
     },
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon": "./assets/images/icon.ico"
     }
   },
   "devDependencies": {
@@ -27,7 +29,7 @@
   },
   "scripts": {
     "postinstall": "electron-builder install-app-deps",
-    "start": "yarn && cross-env DR_URL=https://clinic.cubetiqs.com?platform=desktop electron ./main",
+    "start": "yarn && cross-env APP_URL=https://clinic.cubetiqs.com?platform=desktop electron ./main",
     "pack": "electron-builder --dir",
     "dist": "electron-builder --publish never",
     "build-icon": "electron-icon-builder --input=icon.png --output=dist/icons",
