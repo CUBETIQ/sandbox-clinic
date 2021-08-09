@@ -1,0 +1,42 @@
+appId: "github.com/cubetiq/sandbox-clinic"
+artifactName: ${name}-${version}-${os}-${arch}-${env.ARTIFACT_NAME_POSTFIX}.${ext}
+productName: "Sandbox Clinic"
+publish: { provider: github, releaseType: draft, vPrefixedTagName: true }
+forceCodeSigning: false
+compression: normal
+npmRebuild: false
+asar: true
+
+directories:
+  output: ./dist
+  buildResources: build
+  app: .
+
+mac:
+  category: public.app-category.productivity
+  darkModeSupport: true
+  target:
+    - { target: dmg }
+
+dmg:
+  contents:
+    - { x: 380, y: 240, type: link, path: /Applications }
+    - { x: 122, y: 240, type: file }
+
+linux:
+  category: Productivity
+  packageCategory: Productivity
+  executableArgs:
+    - '--js-flags="--max-old-space-size=12288"'
+  target:
+    - target: deb
+    - target: AppImage
+
+win:
+  artifactName: ${name}-${version}-windows-${arch}.${ext}
+  icon: ./assets/images/icon.ico
+  target:
+    - { target: nsis }
+
+nsis:
+  artifactName: ${name}-${version}-${arch}.${ext}

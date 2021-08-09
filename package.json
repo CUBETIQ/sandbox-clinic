@@ -4,24 +4,7 @@
   "description": "CUBETIQ Clinic System Management",
   "main": "main.js",
   "icon": "./assets/images/icon.ico",
-  "build": {
-    "productName": "Sandbox-Clinic",
-    "appId": "com.cubetiqs.clinic",
-    "mac": {
-      "category": "com.cubetiqs.clinic"
-    },
-    "linux": {
-      "category": "com.cubetiqs.clinic",
-      "target": [
-        "AppImage",
-        "deb"
-      ]
-    },
-    "win": {
-      "target": "nsis",
-      "icon": "./assets/images/icon.ico"
-    }
-  },
+ 
   "devDependencies": {
     "cross-env": "^7.0.0",
     "electron": "^9.4.0",

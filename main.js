@@ -13,7 +13,6 @@ app.on("ready", () => {
   mainApp = new BrowserWindow({
     width: 1024,
     height: 768,
-    icon: "./assets/images/icon.png",
     title: APP_TITLE,
   });
 
