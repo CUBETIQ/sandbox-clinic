@@ -1,6 +1,6 @@
 {
   "name": "sandbox-clinic",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "CUBETIQ Clinic System Management",
   "main": "main.js",
   "icon": "./assets/images/icon.ico",

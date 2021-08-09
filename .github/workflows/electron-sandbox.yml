@@ -1,6 +1,9 @@
 name: Sandbox Clinic System
 
-on: [push]
+on:
+  push:
+    tags:
+      - '*'
 
 jobs:
   build:
