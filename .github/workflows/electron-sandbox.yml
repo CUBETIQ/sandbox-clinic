@@ -28,7 +28,10 @@ jobs:
             yarn install
         - name: Publish
           run: |
-            yarn run dist
+            node build.js clinic && yarn dist
+            node build.js dr && yarn dist
+            node build.js em && yarn dist
+            node build.js kesor && yarn dist
         - name: Cleanup artifacts Linux and macOS
           if: matrix.os != 'windows-latest'
           run: |
